@@ -1,0 +1,69 @@
+DSA
+
+Top 5 Algorithms asked in interviews
+
+1. TOP K ELEMENTS
+
+		1.  Top k frequent elements
+		2. Some sliding window problems
+		3. K largest elements in an array
+		4.  Maximum sum of distinct subarrays with length k
+
+2.   Sliding window
+
+		1. Find the longest substring with k unique characters in a given string
+		2. Longest substrings without repeating characters
+
+3.   Backtracking
+
+        1. combination sum
+        2.
+
+4. dynamic programming
+
+    1. combination sum
+
+5. breadth first search and depth first search
+
+6. dijkstra's algo
+
+7. topological sort
+
+
+
+TOP DATA STRUCTURES ASKED IN INTERVIEWS
+
+
+explain above code step by step with intuition,
+how to identify which algo and data structure to use for this problem,
+how to identify the pattern and breakdown the problem,
+Include everything in md response,
+Concepts & Patterns Used,
+How to Identify the Pattern / Choose the Algorithm,
+Summary in Bullet Points (For Quick Revision),
+Step-by-Step Dry Run,
+Real-Life Use Case,
+Time & Space Complexity
+full code with inline comment explanation
+
+let's start with Chain of Responsibility design patterns, Tomorrow I have system design interview with target corporation Manyata for senior engineer role
+
+let's learn most important and mostly used design pattern in software development especially in supply chain and also all which are asked in interviews
+
+breakdown and explain step by step with inline comments, all explanation and examples should be high traffic production grade applications and systems
+
+include usecases, how to recognize when to apply them, real world usecases
+
+also include LLD problems on this one
+
+let's start learning Composition over Inheritance, Tomorrow I have system design interview with target corporation Manyata for senior engineer role
+
+let's learn most important and mostly used design principles in software development especially in supply chain and also all which are asked in interviews
+
+breakdown and explain step by step with inline comments, all explanation and examples should be high traffic production grade applications and systems
+
+include use cases, how to recognize when to apply them, real world use cases
+
+create cheat sheet
+
+also include LLD problems on this one
