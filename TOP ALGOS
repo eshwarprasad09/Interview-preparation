@@ -33,6 +33,7 @@ Top 5 Algorithms asked in interviews
 
 TOP DATA STRUCTURES ASKED IN INTERVIEWS
 
+https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/
 
 explain above code step by step with intuition,
 how to identify which algo and data structure to use for this problem,
@@ -42,9 +43,11 @@ Concepts & Patterns Used,
 How to Identify the Pattern / Choose the Algorithm,
 Summary in Bullet Points (For Quick Revision),
 Step-by-Step Dry Run,
+Step-by-Step algo explanation in layman,
 Real-Life Use Case,
 Time & Space Complexity
 full code with inline comment explanation
+also mention which category ir concept question is this
 
 let's start with Chain of Responsibility design patterns, Tomorrow I have system design interview with target corporation Manyata for senior engineer role
 
