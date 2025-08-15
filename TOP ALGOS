@@ -70,3 +70,6 @@ include use cases, how to recognize when to apply them, real world use cases
 create cheat sheet
 
 also include LLD problems on this one
+
+----------------
+for code debug, add main method and call the method with input, create complex input so that it covers all edge cases
