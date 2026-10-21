@@ -236,7 +236,132 @@ public class NotificationMessage {
     }
 }
 ```
+public class Computer {
+private String brand;
+private CPU cpu;
+private Storage storage;
 
+    // Private constructor for Computer
+    private Computer(Builder builder) {
+        this.brand = builder.brand;
+        this.cpu = builder.cpu;
+        this.storage = builder.storage;
+    }
+
+    public String getBrand() { return brand; }
+    public CPU getCpu() { return cpu; }
+    public Storage getStorage() { return storage; }
+
+    // ==========================================
+    // INNER CLASS: CPU (with its own Builder)
+    // ==========================================
+    public static class CPU {
+        private String model;
+        private int cores;
+        private double clockSpeedGHz;
+
+        private CPU(Builder builder) {
+            this.model = builder.model;
+            this.cores = builder.cores;
+            this.clockSpeedGHz = builder.clockSpeedGHz;
+        }
+
+        public String getModel() { return model; }
+        public int getCores() { return cores; }
+        public double getClockSpeedGHz() { return clockSpeedGHz; }
+
+        public static class Builder {
+            private String model;
+            private int cores;
+            private double clockSpeedGHz;
+
+            public Builder model(String model) {
+                this.model = model;
+                return this;
+            }
+
+            public Builder cores(int cores) {
+                this.cores = cores;
+                return this;
+            }
+
+            public Builder clockSpeedGHz(double clockSpeedGHz) {
+                this.clockSpeedGHz = clockSpeedGHz;
+                return this;
+            }
+
+            public CPU build() {
+                return new CPU(this);
+            }
+        }
+    }
+
+    // ==========================================
+    // INNER CLASS: STORAGE (with its own Builder)
+    // ==========================================
+    public static class Storage {
+        private String type;
+        private int capacityGB;
+
+        private Storage(Builder builder) {
+            this.type = builder.type;
+            this.capacityGB = builder.capacityGB;
+        }
+
+        public String getType() { return type; }
+        public int getCapacityGB() { return capacityGB; }
+
+        public static class Builder {
+            private String type;
+            private int capacityGB;
+
+            public Builder type(String type) {
+                this.type = type;
+                return this;
+            }
+
+            public Builder capacityGB(int capacityGB) {
+                this.capacityGB = capacityGB;
+                return this;
+            }
+
+            public Storage build() {
+                return new Storage(this);
+            }
+        }
+    }
+
+    // ==========================================
+    // COMPUTER BUILDER
+    // ==========================================
+    public static class Builder {
+        private String brand;
+        private CPU cpu;
+        private Storage storage;
+
+        public Builder brand(String brand) {
+            this.brand = brand;
+            return this;
+        }
+
+        public Builder cpu(CPU cpu) {
+            this.cpu = cpu;
+            return this;
+        }
+
+        public Builder storage(Storage storage) {
+            this.storage = storage;
+            return this;
+        }
+
+        public Computer build() {
+            if (brand == null || cpu == null || storage == null) {
+                throw new IllegalStateException("Brand, CPU, and Storage must all be configured!");
+            }
+            return new Computer(this);
+        }
+    }
+}
 ---
 
 ### Step 2: Usage
@@ -249,7 +374,37 @@ NotificationMessage message = new NotificationMessage.Builder()
         .ctaLink("http://tracking.link")
         .build();
 ```
+public class Main {
+public static void main(String[] args) {
+// 1. Build the CPU using the CPU Builder
+Computer.CPU cpu = new Computer.CPU.Builder()
+.model("Intel Core i9-14900K")
+.cores(24)
+.clockSpeedGHz(6.0)
+.build();
 
+        // 2. Build the Storage using the Storage Builder
+        Computer.Storage storage = new Computer.Storage.Builder()
+                .type("NVMe M.2 SSD")
+                .capacityGB(2048)
+                .build();
+
+        // 3. Build the Computer using the Computer Builder
+        Computer myComputer = new Computer.Builder()
+                .brand("CustomRig")
+                .cpu(cpu)
+                .storage(storage)
+                .build();
+
+        // Verification
+        System.out.println("Brand: " + myComputer.getBrand());
+        System.out.println("CPU: " + myComputer.getCpu().getModel() + 
+                           " (" + myComputer.getCpu().getCores() + " cores, " + 
+                           myComputer.getCpu().getClockSpeedGHz() + " GHz)");
+        System.out.println("Storage: " + myComputer.getStorage().getCapacityGB() + 
+                           "GB " + myComputer.getStorage().getType());
+    }
+}
 ---
 
 ## 🧾 Quick Revision Points
